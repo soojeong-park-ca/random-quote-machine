@@ -1,9 +1,10 @@
 import { createContext } from "react";
 
 const QuoteContext = createContext({
-  quoteData: {},
-  loading: false,
-  error: null,
+  loading: true,
+  error: "",
+  allQuotes: [],
+  quote: {},
 });
 
 export default QuoteContext;

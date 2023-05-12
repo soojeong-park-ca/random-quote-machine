@@ -1,22 +1,24 @@
+import { useContext } from "react";
+
 import QuoteIcon from "../QuoteIcon";
 import TwitterIcon from "../TwitterIcon";
 import TumblrIcon from "../TumblrIcon";
+
+import QuoteContext from "../../store/quote-context";
+
 import "./QuoteBox.scss";
 
 const QuoteBox = () => {
+  const QuoteCtx = useContext(QuoteContext);
+
   return (
     <div id="quote-box">
       <div className="quote-text">
         <QuoteIcon className="quote-icon" />
-        <span id="text">
-          Twenty years from now you will be more disappointed by the things that
-          you didn’t do than by the ones you did do, so throw off the bowlines,
-          sail away from safe harbor, catch the trade winds in your sails.
-          Explore, Dream, Discover.
-        </span>
+        <span id="text">{QuoteCtx.quote.quote}</span>
       </div>
       <div className="quote-author">
-        - <span id="author">Mark Twain</span>
+        - <span id="author">{QuoteCtx.quote.author}</span>
       </div>
       <div className="buttons">
         <a id="tweet-quote" className="button" href="/">
