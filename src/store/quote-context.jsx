@@ -5,6 +5,7 @@ const QuoteContext = createContext({
   error: "",
   allQuotes: [],
   quote: {},
+  changeQuote: () => {},
 });
 
 export default QuoteContext;

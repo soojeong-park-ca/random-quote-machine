@@ -14,20 +14,24 @@ const QuoteBox = () => {
   return (
     <div id="quote-box">
       <div className="quote-text">
-        <QuoteIcon className="quote-icon" />
+        {/* <QuoteIcon className="quote-icon" /> */}
         <span id="text">{QuoteCtx.quote.quote}</span>
       </div>
       <div className="quote-author">
         - <span id="author">{QuoteCtx.quote.author}</span>
       </div>
       <div className="buttons">
-        <a id="tweet-quote" className="button" href="/">
+        {/* <a id="tweet-quote" className="button" href="/">
           <TwitterIcon className="twitter-icon" />
         </a>
         <a id="tumblr-quote" className="button" href="/">
           <TumblrIcon className="tumblr-icon" />
-        </a>
-        <button id="new-quote" className="button">
+        </a> */}
+        <button
+          id="new-quote"
+          className="button"
+          onClick={QuoteCtx.changeQuote}
+        >
           New quote
         </button>
       </div>

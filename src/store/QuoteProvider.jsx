@@ -6,6 +6,7 @@ import axios from "axios";
 
 const FETCH_SUCCESS = "FETCH_SUCCESS";
 const FETCH_ERROR = "FETCH_ERROR";
+const CHANGE_QUOTE = "CHANGE_QUOTE";
 
 const initialState = {
   loading: true,
@@ -18,6 +19,7 @@ const reducer = (state, action) => {
   switch (action.type) {
     case FETCH_SUCCESS:
       return {
+        ...state,
         loading: false,
         allQuotes: action.payload,
         quote:
@@ -26,9 +28,25 @@ const reducer = (state, action) => {
       };
     case FETCH_ERROR:
       return {
+        ...state,
         loading: false,
         quote: {},
         error: "Something went wrong!",
+      };
+    case CHANGE_QUOTE:
+      const currentQuoteIndex = state.allQuotes.findIndex(
+        quote => quote === state.quote
+      );
+      let newQuoteIndex;
+
+      // Find a new quote index that is different from the current one
+      do {
+        newQuoteIndex = Math.floor(Math.random() * state.allQuotes.length);
+      } while (newQuoteIndex === currentQuoteIndex);
+
+      return {
+        ...state,
+        quote: state.allQuotes[newQuoteIndex],
       };
     default:
       return state;
@@ -55,11 +73,16 @@ const QuoteProvider = props => {
       });
   }, []);
 
+  const changeQuoteHandler = () => {
+    dispatch({ type: CHANGE_QUOTE });
+  };
+
   const quoteContext = {
     loading: state.loding,
     error: state.error,
     allQuotes: state.allQuotes,
     quote: state.quote,
+    changeQuote: changeQuoteHandler,
   };
 
   return (
