@@ -6,9 +6,19 @@ import "./QuoteBox.scss";
 
 const QuoteBox = () => {
   const QuoteCtx = useContext(QuoteContext);
-  console.log(QuoteCtx.color);
   const currentQuote = QuoteCtx.quote.quote;
-  const currentAuthor = QuoteCtx.quote.author;
+  const currentAuthor = replaceSpaces(QuoteCtx.quote.author);
+
+  function replaceSpaces(string) {
+    if (/[.\s]/.test(string)) {
+      return string.replace(/[.\s]/g, "");
+    } else {
+      return string;
+    }
+  }
+
+  console.log(QuoteCtx.color);
+  console.log(currentAuthor);
 
   document.documentElement.style.setProperty("--primary-color", QuoteCtx.color);
 
