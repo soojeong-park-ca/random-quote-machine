@@ -7,12 +7,47 @@ import axios from "axios";
 const FETCH_SUCCESS = "FETCH_SUCCESS";
 const FETCH_ERROR = "FETCH_ERROR";
 const CHANGE_QUOTE = "CHANGE_QUOTE";
+const CHANGE_COLOR = "CHANGE_COLOR";
 
 const initialState = {
   loading: true,
-  error: "",
+  error: null,
   allQuotes: [],
   quote: {},
+  allColors: [
+    "#FFB6C1",
+    "#FF4500",
+    "#FF69B4",
+    "#FF6347",
+    "#FFD700",
+    "#FF8C00",
+    "#FF1493",
+    "#FFA500",
+    "#FF0000",
+    "#FF8B00",
+    "#FF00FF",
+    "#FF00FF",
+    "#EE82EE",
+    "#DA70D6",
+    "#BA55D3",
+    "#800080",
+    "#4B0082",
+    "#8A2BE2",
+    "#4169E1",
+    "#0000FF",
+    "#00BFFF",
+    "#87CEEB",
+    "#00FA9A",
+    "#32CD32",
+    "#00FF00",
+    "#ADFF2F",
+    "#FFFF00",
+    "#FFD700",
+    "#FFA500",
+    "#FF4500",
+    "#FF6347",
+  ],
+  color: "",
 };
 
 const reducer = (state, action) => {
@@ -21,10 +56,12 @@ const reducer = (state, action) => {
       return {
         ...state,
         loading: false,
+        error: null,
         allQuotes: action.payload,
         quote:
-          action.payload[Math.floor(Math.random() * action.payload.length)],
-        error: "",
+          action.payload[Math.floor(Math.random() * state.allQuotes.length)],
+        color:
+          state.allColors[Math.floor(Math.random() * state.allColors.length)],
       };
     case FETCH_ERROR:
       return {
@@ -34,19 +71,30 @@ const reducer = (state, action) => {
         error: "Something went wrong!",
       };
     case CHANGE_QUOTE:
+      // quote
       const currentQuoteIndex = state.allQuotes.findIndex(
         quote => quote === state.quote
       );
       let newQuoteIndex;
-
       // Find a new quote index that is different from the current one
       do {
         newQuoteIndex = Math.floor(Math.random() * state.allQuotes.length);
       } while (newQuoteIndex === currentQuoteIndex);
 
+      // color
+      const currentColorIndex = state.allColors.findIndex(
+        color => color === state.color
+      );
+      let newColorIndex;
+      // Find a new Color index that is different from the current one
+      do {
+        newColorIndex = Math.floor(Math.random() * state.allColors.length);
+      } while (newColorIndex === currentColorIndex);
+
       return {
         ...state,
         quote: state.allQuotes[newQuoteIndex],
+        color: state.allColors[newColorIndex],
       };
     default:
       return state;
@@ -82,6 +130,8 @@ const QuoteProvider = props => {
     error: state.error,
     allQuotes: state.allQuotes,
     quote: state.quote,
+    allColors: state.allColors,
+    color: state.color,
     changeQuote: changeQuoteHandler,
   };
 

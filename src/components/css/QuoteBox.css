@@ -1,1 +1,16 @@
-/*# sourceMappingURL=QuoteBox.css.map */
+.fa-brands {
+  color: #fff;
+}
+
+.button {
+  text-decoration: none;
+  border: none;
+  background-color: var(--primary-color);
+}
+.button--sns {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+.button-new-quote {
+  color: #fff;
+}/*# sourceMappingURL=QuoteBox.css.map */

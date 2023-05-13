@@ -1,1 +1,24 @@
+@use "../../sass/abstracts/mixins" as m;
+@use "../../sass/abstracts/variables" as v;
 
+#quote-box {
+}
+
+.fa-brands {
+  color: v.$color-white;
+}
+
+.button {
+  text-decoration: none;
+  border: none;
+  background-color: var(--primary-color);
+
+  &--sns {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  &-new-quote {
+    color: v.$color-white;
+  }
+}

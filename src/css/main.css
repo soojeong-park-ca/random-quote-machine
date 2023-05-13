@@ -5,8 +5,24 @@
   box-sizing: border-box;
 }
 
+:root {
+  --primary-color: ;
+}
+
+html {
+  width: 100%;
+}
+
 body {
+  width: 100%;
   font-family: "Raleway", sans-serif;
   font-weight: 400;
   font-size: 1rem;
+}
+
+#root {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,9 @@
+@mixin center-hori-verti {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin center-hori {
+  margin: 0 auto;
+}

@@ -2,9 +2,11 @@ import { createContext } from "react";
 
 const QuoteContext = createContext({
   loading: true,
-  error: "",
+  error: null,
   allQuotes: [],
   quote: {},
+  allColors: [],
+  color: "",
   changeQuote: () => {},
 });
 

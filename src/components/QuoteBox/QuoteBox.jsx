@@ -1,35 +1,34 @@
 import { useContext } from "react";
 
-import QuoteIcon from "../QuoteIcon";
-import TwitterIcon from "../TwitterIcon";
-import TumblrIcon from "../TumblrIcon";
-
 import QuoteContext from "../../store/quote-context";
 
 import "./QuoteBox.scss";
 
 const QuoteBox = () => {
   const QuoteCtx = useContext(QuoteContext);
+  console.log(QuoteCtx.color);
+
+  document.documentElement.style.setProperty("--primary-color", QuoteCtx.color);
 
   return (
     <div id="quote-box">
-      <div className="quote-text">
-        {/* <QuoteIcon className="quote-icon" /> */}
+      <div className="quote__text">
+        <i className="fa-solid fa-quote-left"></i>
         <span id="text">{QuoteCtx.quote.quote}</span>
       </div>
-      <div className="quote-author">
+      <div className="quote__author">
         - <span id="author">{QuoteCtx.quote.author}</span>
       </div>
       <div className="buttons">
-        {/* <a id="tweet-quote" className="button" href="/">
-          <TwitterIcon className="twitter-icon" />
+        <a id="tweet-quote" className="button button--sns" href="/">
+          <i className="fa-brands fa-twitter fa-lg"></i>
         </a>
-        <a id="tumblr-quote" className="button" href="/">
-          <TumblrIcon className="tumblr-icon" />
-        </a> */}
+        <a id="tumblr-quote" className="button button--sns" href="/">
+          <i className="fa-brands fa-tumblr fa-lg"></i>
+        </a>
         <button
           id="new-quote"
-          className="button"
+          className="button button-new-quote"
           onClick={QuoteCtx.changeQuote}
         >
           New quote
