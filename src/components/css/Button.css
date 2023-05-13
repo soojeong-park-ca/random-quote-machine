@@ -1,0 +1,7 @@
+.button {
+  text-decoration: none;
+  border: none;
+  border-radius: 3px;
+  background-color: var(--primary-color);
+  cursor: pointer;
+}/*# sourceMappingURL=Button.css.map */

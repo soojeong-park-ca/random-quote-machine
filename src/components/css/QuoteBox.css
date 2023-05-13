@@ -1,16 +1,58 @@
-.fa-brands {
+#quote-box {
+  width: 100%;
+  background-color: #fff;
+  border-radius: 3px;
+  padding: 2rem 2.5rem;
+}
+
+.quote__text-box {
+  font-size: 1.4rem;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.quote__icon, .quote__text {
+  color: var(--primary-color);
+}
+.quote__author {
+  font-size: 0.8rem;
+  color: var(--primary-color);
+  text-align: right;
+  margin-bottom: 2rem;
+}
+.quote__button-icon {
   color: #fff;
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
 }
 
 .button {
   text-decoration: none;
   border: none;
+  border-radius: 3px;
   background-color: var(--primary-color);
+  cursor: pointer;
 }
 .button--sns {
-  width: 1.5rem;
-  height: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  text-align: center;
+}
+.button--twitter {
+  margin-right: 0.5rem;
+}
+.button--tumblr {
+  margin-right: auto;
 }
 .button-new-quote {
+  height: 2.5rem;
+  font-size: 1rem;
   color: #fff;
+  padding-inline: 1rem;
 }/*# sourceMappingURL=QuoteBox.css.map */

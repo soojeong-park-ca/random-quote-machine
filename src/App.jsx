@@ -3,10 +3,14 @@ import Footer from "./components/Footer/Footer";
 
 import QuoteProvider from "./store/QuoteProvider";
 
+import "./App.scss";
+
 function App() {
   return (
     <QuoteProvider>
-      <h1>Random Quote Machine</h1>
+      <div className="heading-box">
+        <h1 className="heading-primary">Random Quote Machine</h1>
+      </div>
       <QuoteBox />
       <Footer />
     </QuoteProvider>

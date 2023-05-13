@@ -15,13 +15,19 @@
 
 html {
   width: 100%;
+  height: 100%;
 }
 
 body {
+  @include m.center-hori-verti;
   width: 100%;
+  height: 100%;
   font-family: v.$font-f-default;
   font-weight: v.$font-w-default;
   font-size: v.$font-s-default;
+  background-color: var(--primary-color);
+
+  padding-inline: 1.5rem;
 }
 
 #root {

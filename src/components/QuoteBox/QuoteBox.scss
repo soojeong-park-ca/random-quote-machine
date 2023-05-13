@@ -2,23 +2,69 @@
 @use "../../sass/abstracts/variables" as v;
 
 #quote-box {
+  width: 100%;
+  background-color: v.$color-white;
+  border-radius: v.$border-radius-sm;
+  // padding: 2.5rem 3.125rem;
+  padding: 2rem 2.5rem;
 }
 
-.fa-brands {
-  color: v.$color-white;
+.quote {
+  &__text-box {
+    font-size: v.$font-s-md;
+    font-weight: v.$font-w-md;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  &__icon,
+  &__text {
+    color: var(--primary-color);
+  }
+
+  &__author {
+    font-size: v.$font-s-sm;
+    color: var(--primary-color);
+    text-align: right;
+    margin-bottom: 2rem;
+  }
+
+  &__button-icon {
+    color: v.$color-white;
+  }
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
 }
 
 .button {
   text-decoration: none;
   border: none;
+  border-radius: v.$border-radius-sm;
   background-color: var(--primary-color);
+  cursor: pointer;
 
   &--sns {
-    width: 1.5rem;
-    height: 1.5rem;
+    @include m.center-hori-verti;
+    width: 2.5rem;
+    height: 2.5rem;
+    text-align: center;
+  }
+
+  &--twitter {
+    margin-right: 0.5rem;
+  }
+
+  &--tumblr {
+    margin-right: auto;
   }
 
   &-new-quote {
+    height: 2.5rem;
+    font-size: v.$font-s-default;
     color: v.$color-white;
+    padding-inline: 1rem;
   }
 }
