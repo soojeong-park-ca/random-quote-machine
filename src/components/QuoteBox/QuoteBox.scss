@@ -1,5 +1,6 @@
 @use "../../sass/abstracts/mixins" as m;
 @use "../../sass/abstracts/variables" as v;
+@import "../../sass/base/base";
 @import "../../sass/base/typography";
 
 #quote-box {
@@ -7,6 +8,7 @@
   background-color: v.$color-white;
   border-radius: v.$border-radius-sm;
   padding: 2rem 2.5rem;
+  box-shadow: 0 0.5rem 1rem rgba(v.$color-black, 0.15);
 
   transition: all 0.2s ease-in-out;
 
@@ -36,7 +38,7 @@
 
     &--sns {
       position: absolute;
-      top: -2rem;
+      top: -1.8rem;
       left: 0;
       gap: 0;
     }
@@ -48,6 +50,9 @@
   border: none;
   border-radius: v.$border-radius-sm;
   background-color: var(--primary-color);
+  box-shadow: 0 0.2rem 0.4rem rgba(v.$color-black, 0.1);
+
+  transition: all 0.2s;
   cursor: pointer;
 
   &--sns {
@@ -66,7 +71,15 @@
     position: relative;
   }
 
+  @include m.hoverEffect() {
+    &:hover {
+      opacity: 0.9;
+    }
+  }
+
   @include m.respondMax(v.$breakpoint-phone-xs) {
+    box-shadow: none;
+
     &--sns {
       background-color: transparent;
       width: 1.5rem;

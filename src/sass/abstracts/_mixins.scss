@@ -24,7 +24,7 @@
 }
 
 @mixin hoverEffect() {
-  @media (hover: hover), (pointer: fine) {
+  @media (hover: hover) and (pointer: fine) {
     @content;
   }
 }

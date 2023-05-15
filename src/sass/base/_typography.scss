@@ -1,5 +1,6 @@
 @use "../abstracts/variables" as v;
 @use "../abstracts/mixins" as m;
+@import "../base/animation";
 
 body {
   font-family: v.$font-f-default;
@@ -29,14 +30,6 @@ body {
     font-weight: v.$font-w-md;
     text-align: center;
     margin-bottom: 1rem;
-
-    @include m.respondMin(v.$breakpoint-tablet-md) {
-      font-size: v.$font-s-xl;
-    }
-
-    @include m.respondMax(v.$breakpoint-phone-xs) {
-      font-size: v.$font-s-default;
-    }
   }
 
   &__icon,
@@ -45,7 +38,7 @@ body {
   }
 
   &__author {
-    font-size: v.$font-s-sm;
+    font-size: v.$font-s-default;
     color: var(--primary-color);
     text-align: right;
     margin-bottom: 2rem;
@@ -53,8 +46,25 @@ body {
 
   &__button-icon {
     color: v.$color-white;
+  }
 
-    @include m.respondMax(v.$breakpoint-phone-xs) {
+  @include m.respondMin(v.$breakpoint-tablet-md) {
+    &__text-box {
+      font-size: v.$font-s-xl;
+    }
+  }
+
+  @include m.respondMax(v.$breakpoint-phone-xs) {
+    &__text-box {
+      font-size: v.$font-s-default;
+    }
+
+    &__author {
+      font-size: v.$font-s-sm;
+      margin-bottom: 2.4rem;
+    }
+
+    &__button-icon {
       color: var(--primary-color);
     }
   }

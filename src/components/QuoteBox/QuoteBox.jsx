@@ -18,9 +18,6 @@ const QuoteBox = () => {
     }
   }
 
-  // console.log(QuoteCtx.color);
-  // console.log(currentAuthor);
-
   // Change CSS variable value
   document.documentElement.style.setProperty("--primary-color", QuoteCtx.color);
 
@@ -32,8 +29,8 @@ const QuoteBox = () => {
           {QuoteCtx.quote.quote}
         </span>
       </div>
-      <div className="quote__author">
-        - <span id="author">{QuoteCtx.quote.author}</span>
+      <div id="author" className="quote__author">
+        &mdash; {QuoteCtx.quote.author}
       </div>
       <div className="buttons">
         <div className="buttons--sns">
