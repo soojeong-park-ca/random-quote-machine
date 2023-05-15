@@ -1,8 +1,73 @@
-#quote-box {
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;500&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  transition: background-color 0.5s, color 0.5s;
+}
+
+*:focus {
+  outline: 2px solid #000;
+  outline-style: dotted;
+}
+*:focus:not(:focus-visible) {
+  outline: none;
+}
+
+*:focus-visible {
+  outline: 2px solid #000;
+  outline-style: dotted;
+  border-radius: 2px;
+}
+
+:root {
+  --primary-color: ;
+}
+
+html {
   width: 100%;
-  background-color: #fff;
-  border-radius: 3px;
-  padding: 2rem 2.5rem;
+  height: 100%;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background-color: var(--primary-color);
+  color: var(--primary-color);
+  padding-inline: 1.5rem;
+}
+
+#root {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+body {
+  font-family: "Raleway", sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+.heading-primary {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--primary-color);
+  transform: skew(20deg);
+}
+@media screen and (min-width: 37.5em) {
+  .heading-primary {
+    font-size: 1.75rem;
+  }
+}
+@media screen and (max-width: 23.375em) {
+  .heading-primary {
+    font-size: 1rem;
+  }
 }
 
 .quote__text-box {
@@ -15,7 +80,7 @@
   color: var(--primary-color);
 }
 .quote__author {
-  font-size: 0.8rem;
+  font-size: 1rem;
   color: var(--primary-color);
   text-align: right;
   margin-bottom: 2rem;
@@ -23,10 +88,64 @@
 .quote__button-icon {
   color: #fff;
 }
+@media screen and (min-width: 37.5em) {
+  .quote__text-box {
+    font-size: 1.75rem;
+  }
+}
+@media screen and (max-width: 23.375em) {
+  .quote__text-box {
+    font-size: 1rem;
+  }
+  .quote__author {
+    font-size: 0.8rem;
+    margin-bottom: 2.4rem;
+  }
+  .quote__button-icon {
+    color: var(--primary-color);
+  }
+}
+
+#quote-box {
+  width: 100%;
+  background-color: #fff;
+  border-radius: 3px;
+  padding: 2rem 2.5rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  transition: all 0.2s ease-in-out;
+}
+@media screen and (min-width: 26.625em) {
+  #quote-box {
+    max-width: 35rem;
+    padding: 2.5rem 3.125rem;
+  }
+}
+@media screen and (min-width: 37.5em) {
+  #quote-box {
+    width: 35rem;
+  }
+}
 
 .buttons {
   display: flex;
   align-items: center;
+}
+.buttons--sns {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-right: auto;
+}
+@media screen and (max-width: 23.375em) {
+  .buttons {
+    position: relative;
+  }
+  .buttons--sns {
+    position: absolute;
+    top: -1.8rem;
+    left: 0;
+    gap: 0;
+  }
 }
 
 .button {
@@ -34,6 +153,8 @@
   border: none;
   border-radius: 3px;
   background-color: var(--primary-color);
+  box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.1);
+  transition: all 0.2s;
   cursor: pointer;
 }
 .button--sns {
@@ -44,15 +165,28 @@
   height: 2.5rem;
   text-align: center;
 }
-.button--twitter {
-  margin-right: 0.5rem;
-}
-.button--tumblr {
-  margin-right: auto;
-}
 .button-new-quote {
   height: 2.5rem;
   font-size: 1rem;
   color: #fff;
   padding-inline: 1rem;
+  position: relative;
+}
+@media (hover: hover) and (pointer: fine) {
+  .button:hover {
+    opacity: 0.9;
+  }
+}
+@media screen and (max-width: 23.375em) {
+  .button {
+    box-shadow: none;
+  }
+  .button--sns {
+    background-color: transparent;
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+  .button-new-quote {
+    width: 100%;
+  }
 }/*# sourceMappingURL=QuoteBox.css.map */

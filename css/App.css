@@ -1,10 +1,7 @@
-.heading-box {
-  width: 100%;
-  background-color: #000;
-  text-align: center;
-  padding: 0.4rem 1rem;
-  margin-bottom: 1rem;
-  transform: skew(-20deg);
+body {
+  font-family: "Raleway", sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
 }
 
 .heading-primary {
@@ -12,4 +9,60 @@
   font-weight: 500;
   color: var(--primary-color);
   transform: skew(20deg);
+}
+@media screen and (min-width: 37.5em) {
+  .heading-primary {
+    font-size: 1.75rem;
+  }
+}
+@media screen and (max-width: 23.375em) {
+  .heading-primary {
+    font-size: 1rem;
+  }
+}
+
+.quote__text-box {
+  font-size: 1.4rem;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.quote__icon, .quote__text {
+  color: var(--primary-color);
+}
+.quote__author {
+  font-size: 1rem;
+  color: var(--primary-color);
+  text-align: right;
+  margin-bottom: 2rem;
+}
+.quote__button-icon {
+  color: #fff;
+}
+@media screen and (min-width: 37.5em) {
+  .quote__text-box {
+    font-size: 1.75rem;
+  }
+}
+@media screen and (max-width: 23.375em) {
+  .quote__text-box {
+    font-size: 1rem;
+  }
+  .quote__author {
+    font-size: 0.8rem;
+    margin-bottom: 2.4rem;
+  }
+  .quote__button-icon {
+    color: var(--primary-color);
+  }
+}
+
+.heading-box {
+  width: 100%;
+  background-color: #000;
+  text-align: center;
+  box-shadow: 0.15rem 0.3rem 0.6rem rgba(0, 0, 0, 0.15);
+  padding: 0.4rem 1rem;
+  margin-bottom: 1rem;
+  transform: skew(-20deg);
 }/*# sourceMappingURL=App.css.map */

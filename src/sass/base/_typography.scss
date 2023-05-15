@@ -1,6 +1,5 @@
 @use "../abstracts/variables" as v;
 @use "../abstracts/mixins" as m;
-@import "../base/animation";
 
 body {
   font-family: v.$font-f-default;
