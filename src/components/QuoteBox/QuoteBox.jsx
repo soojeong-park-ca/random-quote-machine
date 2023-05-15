@@ -39,7 +39,7 @@ const QuoteBox = () => {
         <a
           id="tweet-quote"
           className="button button--sns button--twitter"
-          href={`https://twitter.com/intent/tweet?text="${currentQuote}."&hashtags=${currentAuthorHashtag},QuoteOfTheDay`}
+          href={`https://twitter.com/intent/tweet?text="${currentQuote}"&hashtags=${currentAuthorHashtag},QuoteOfTheDay`}
           target="_blank"
           rel="noopener noreferrer"
         >
