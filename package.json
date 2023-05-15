@@ -8,8 +8,9 @@
     "build": "vite build",
     "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
+    "watch:sass": "sass --watch src/sass/main/scss:src/css/main.css src/App.scss:src/css/App.css src/components/Footer/Footer.scss:src/css/Footer.css src/components/QuoteBox/QuoteBox.scss:src/css/QuoteBox.css",
     "compile:sass": "sass src/sass/main.scss src/css/style.comp.css",
-    "concat:css": "concat -o src/css/style.concat.css src/css/style.comp.css src/components/css/Footer.css src/components/css/QuoteBox.css css/App.css",
+    "concat:css": "concat -o src/css/style.concat.css src/css/style.comp.css src/css/Footer.css src/css/QuoteBox.css src/css/App.css",
     "prefix:css": "postcss --use autoprefixer -b 'last 10 versions' src/css/style.concat.css -o src/css/style.prefix.css",
     "compress:css": "sass src/css/style.prefix.css src/css/style.css --style compressed",
     "build:css": "npm-run-all compile:sass concat:css prefix:css compress:css"
