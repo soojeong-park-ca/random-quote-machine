@@ -7,7 +7,8 @@ import "./QuoteBox.scss";
 const QuoteBox = () => {
   const QuoteCtx = useContext(QuoteContext);
   const currentQuote = QuoteCtx.quote.quote;
-  const currentAuthor = replaceSpaces(QuoteCtx.quote.author);
+  const currentAuthor = QuoteCtx.quote.author;
+  const currentAuthorHashtag = replaceSpaces(QuoteCtx.quote.author);
 
   function replaceSpaces(string) {
     if (/[.\s]/.test(string)) {
@@ -38,7 +39,7 @@ const QuoteBox = () => {
         <a
           id="tweet-quote"
           className="button button--sns button--twitter"
-          href={`https://twitter.com/intent/tweet?text="${currentQuote}."&hashtags=${currentAuthor},QuoteOfTheDay`}
+          href={`https://twitter.com/intent/tweet?text="${currentQuote}."&hashtags=${currentAuthorHashtag},QuoteOfTheDay`}
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -47,7 +48,9 @@ const QuoteBox = () => {
         <a
           id="tumblr-quote"
           className="button button--sns button--tumblr"
-          href="/"
+          href={`https://www.tumblr.com/widgets/share/tool?posttype=quote&tags=QuoteOfTheDay,${currentAuthorHashtag}&caption=${currentAuthor}&content=${currentQuote}&canonicalUrl=https://www.tumblr.com/buttons`}
+          target="_blank"
+          rel="noopener noreferrer"
         >
           <i className="fa-brands fa-tumblr fa-lg quote__button-icon"></i>
         </a>

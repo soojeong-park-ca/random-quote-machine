@@ -3,10 +3,13 @@
 
 #quote-box {
   width: 100%;
+  max-width: 35rem;
   background-color: v.$color-white;
   border-radius: v.$border-radius-sm;
   // padding: 2.5rem 3.125rem;
   padding: 2rem 2.5rem;
+
+  transition: all 0.2s ease-in-out;
 }
 
 .quote {
