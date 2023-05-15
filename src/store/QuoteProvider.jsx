@@ -7,7 +7,6 @@ import axios from "axios";
 const FETCH_SUCCESS = "FETCH_SUCCESS";
 const FETCH_ERROR = "FETCH_ERROR";
 const CHANGE_QUOTE = "CHANGE_QUOTE";
-const CHANGE_COLOR = "CHANGE_COLOR";
 
 const initialState = {
   loading: true,
@@ -144,10 +143,3 @@ const QuoteProvider = props => {
 };
 
 export default QuoteProvider;
-
-/*
-      {state.loading
-        ? "Loading..."
-        : console.log(randomQuoteData.quote, randomQuoteData.author)}
-      {state.error ? state.error : null}
-*/

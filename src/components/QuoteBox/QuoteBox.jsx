@@ -17,9 +17,10 @@ const QuoteBox = () => {
     }
   }
 
-  console.log(QuoteCtx.color);
-  console.log(currentAuthor);
+  // console.log(QuoteCtx.color);
+  // console.log(currentAuthor);
 
+  // Change CSS variable value
   document.documentElement.style.setProperty("--primary-color", QuoteCtx.color);
 
   return (
@@ -37,7 +38,7 @@ const QuoteBox = () => {
         <a
           id="tweet-quote"
           className="button button--sns button--twitter"
-          href={`https://twitter.com/intent/tweet?text=${currentQuote}&hashtags=${currentAuthor},QuoteOfTheDay`}
+          href={`https://twitter.com/intent/tweet?text="${currentQuote}."&hashtags=${currentAuthor},QuoteOfTheDay`}
           target="_blank"
           rel="noopener noreferrer"
         >
