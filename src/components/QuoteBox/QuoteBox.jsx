@@ -36,24 +36,26 @@ const QuoteBox = () => {
         - <span id="author">{QuoteCtx.quote.author}</span>
       </div>
       <div className="buttons">
-        <a
-          id="tweet-quote"
-          className="button button--sns button--twitter"
-          href={`https://twitter.com/intent/tweet?text="${currentQuote}"&hashtags=${currentAuthorHashtag},QuoteOfTheDay`}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <i className="fa-brands fa-twitter fa-lg quote__button-icon"></i>
-        </a>
-        <a
-          id="tumblr-quote"
-          className="button button--sns button--tumblr"
-          href={`https://www.tumblr.com/widgets/share/tool?posttype=quote&tags=QuoteOfTheDay,${currentAuthorHashtag}&caption=${currentAuthor}&content=${currentQuote}&canonicalUrl=https://www.tumblr.com/buttons`}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <i className="fa-brands fa-tumblr fa-lg quote__button-icon"></i>
-        </a>
+        <div className="buttons--sns">
+          <a
+            id="tweet-quote"
+            className="button button--sns button--twitter"
+            href={`https://twitter.com/intent/tweet?text="${currentQuote}"&hashtags=${currentAuthorHashtag},QuoteOfTheDay`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i className="fa-brands fa-twitter fa-lg quote__button-icon"></i>
+          </a>
+          <a
+            id="tumblr-quote"
+            className="button button--sns button--tumblr"
+            href={`https://www.tumblr.com/widgets/share/tool?posttype=quote&tags=QuoteOfTheDay,${currentAuthorHashtag}&caption=${currentAuthor}&content=${currentQuote}&canonicalUrl=https://www.tumblr.com/buttons`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i className="fa-brands fa-tumblr fa-lg quote__button-icon"></i>
+          </a>
+        </div>
         <button
           id="new-quote"
           className="button button-new-quote"

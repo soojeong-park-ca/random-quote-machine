@@ -1,3 +1,5 @@
+@use "../abstracts/variables" as v;
+
 @mixin center-hori-verti {
   display: flex;
   align-items: center;
@@ -6,4 +8,23 @@
 
 @mixin center-hori {
   margin: 0 auto;
+}
+
+// MEDIA QUERY MANAGER
+@mixin respondMax($breakpoint) {
+  @media screen and (max-width: calc(calc($breakpoint / 16px) * 1em)) {
+    @content;
+  }
+}
+
+@mixin respondMin($breakpoint) {
+  @media screen and (min-width: calc(calc($breakpoint / 16px) * 1em)) {
+    @content;
+  }
+}
+
+@mixin hoverEffect() {
+  @media (hover: hover), (pointer: fine) {
+    @content;
+  }
 }

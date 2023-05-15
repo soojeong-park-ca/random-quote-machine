@@ -1,4 +1,5 @@
 @use "./sass/abstracts/variables" as v;
+@import "./sass/base/typography";
 
 .heading-box {
   width: 100%;
@@ -9,12 +10,4 @@
   margin-bottom: 1rem;
 
   transform: skew(-20deg);
-}
-
-.heading-primary {
-  font-size: v.$font-s-lg;
-  font-weight: v.$font-w-md;
-  color: var(--primary-color);
-
-  transform: skew(20deg);
 }
