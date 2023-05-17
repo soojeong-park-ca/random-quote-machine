@@ -23,12 +23,12 @@ const QuoteBox = () => {
 
   return (
     <div id="quote-box">
-      <div className="quote__text-box">
+      <blockquote className="quote__text-box">
         <i className="fa-solid fa-quote-left quote__icon"></i>&nbsp;
         <span id="text" className="quote__text">
           {QuoteCtx.quote.quote}
         </span>
-      </div>
+      </blockquote>
       <div id="author" className="quote__author">
         &mdash; {QuoteCtx.quote.author}
       </div>
